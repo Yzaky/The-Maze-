@@ -1,7 +1,8 @@
 # The-Maze-
 
 ##My first coding project, a simple game implemented in C.
-          
+
+First the game was implemented in text mode ( NCURSES ), then we added the GUI using SDL/SDL2 lib.
 ###While in the main repository
 
 ###To compile
