@@ -1,0 +1,152 @@
+\hypertarget{menu_8c}{\section{src/menu.c File Reference}
+\label{menu_8c}\index{src/menu.\-c@{src/menu.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}menu.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{menu_8c_a020dc50a87d1b18cd7aaf15337b658b5}{menu\-Init} (\hyperlink{struct_menu}{Menu} $\ast$m)
+\begin{DoxyCompactList}\small\item\em this procedure initialize the \hyperlink{struct_menu}{Menu} \end{DoxyCompactList}\item 
+void \hyperlink{menu_8c_a86fd357ed934d1bee2363768e21b8c82}{menu\-Ajouter\-Ligne} (\hyperlink{struct_menu}{Menu} $\ast$m, char txt\mbox{[}64\mbox{]}, \hyperlink{menu_8h_a8bb8308ed871ab4b0f743a10a35d68ec}{Menu\-Fonction} fonct)
+\begin{DoxyCompactList}\small\item\em this procedure is used to add a new line in the menu \end{DoxyCompactList}\item 
+void \hyperlink{menu_8c_a34b85deb1b80624723eb74d040e2a773}{menu\-Libere} (\hyperlink{struct_menu}{Menu} $\ast$m)
+\begin{DoxyCompactList}\small\item\em this procedure frees the space allocated for the menu in the memory \end{DoxyCompactList}\item 
+void \hyperlink{menu_8c_a4073edd79322249c99028b252507ae48}{menu\-Aff} (const \hyperlink{struct_menu}{Menu} $\ast$m)
+\item 
+int \hyperlink{menu_8c_a0de1af91f2b98e059ce0463e78188273}{menu\-Question} (const \hyperlink{struct_menu}{Menu} $\ast$m)
+\item 
+void \hyperlink{menu_8c_aba4d8d6149690486e6c75ff6855797f3}{menu\-Loop} (\hyperlink{struct_menu}{Menu} $\ast$m)
+\begin{DoxyCompactList}\small\item\em this procedure takes control of the menu loop \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{menu_8c_a4073edd79322249c99028b252507ae48}{\index{menu.\-c@{menu.\-c}!menu\-Aff@{menu\-Aff}}
+\index{menu\-Aff@{menu\-Aff}!menu.c@{menu.\-c}}
+\subsubsection[{menu\-Aff}]{\setlength{\rightskip}{0pt plus 5cm}void menu\-Aff (
+\begin{DoxyParamCaption}
+\item[{const {\bf Menu} $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_a4073edd79322249c99028b252507ae48}
+
+\begin{DoxyCode}
+29                    : %s\(\backslash\)n\textcolor{stringliteral}{", i, m->lignes[i].texte);}
+30 \textcolor{stringliteral}{    printf("}Votre choix?\(\backslash\)n\textcolor{stringliteral}{");}
+31 \textcolor{stringliteral}{    fflush(stdout);}
+32 \textcolor{stringliteral}{\}}
+33 \textcolor{stringliteral}{}
+34 \textcolor{stringliteral}{int menuQuestion(const Menu *m)}
+\end{DoxyCode}
+\hypertarget{menu_8c_a86fd357ed934d1bee2363768e21b8c82}{\index{menu.\-c@{menu.\-c}!menu\-Ajouter\-Ligne@{menu\-Ajouter\-Ligne}}
+\index{menu\-Ajouter\-Ligne@{menu\-Ajouter\-Ligne}!menu.c@{menu.\-c}}
+\subsubsection[{menu\-Ajouter\-Ligne}]{\setlength{\rightskip}{0pt plus 5cm}void menu\-Ajouter\-Ligne (
+\begin{DoxyParamCaption}
+\item[{{\bf Menu} $\ast$}]{m, }
+\item[{char}]{txt\mbox{[}64\mbox{]}, }
+\item[{{\bf Menu\-Fonction}}]{fonct}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_a86fd357ed934d1bee2363768e21b8c82}
+
+
+this procedure is used to add a new line in the menu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is a pointer on the structure \hyperlink{struct_menu}{Menu} \\
+\hline
+{\em Menu\-Fonction} & is the fonction we will call if it's choice is selected \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+20 \{
+\end{DoxyCode}
+\hypertarget{menu_8c_a020dc50a87d1b18cd7aaf15337b658b5}{\index{menu.\-c@{menu.\-c}!menu\-Init@{menu\-Init}}
+\index{menu\-Init@{menu\-Init}!menu.c@{menu.\-c}}
+\subsubsection[{menu\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void menu\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf Menu} $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_a020dc50a87d1b18cd7aaf15337b658b5}
+
+
+this procedure initialize the \hyperlink{struct_menu}{Menu} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & which is a pointer on the structure \hyperlink{struct_menu}{Menu} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+12 \{
+\end{DoxyCode}
+\hypertarget{menu_8c_a34b85deb1b80624723eb74d040e2a773}{\index{menu.\-c@{menu.\-c}!menu\-Libere@{menu\-Libere}}
+\index{menu\-Libere@{menu\-Libere}!menu.c@{menu.\-c}}
+\subsubsection[{menu\-Libere}]{\setlength{\rightskip}{0pt plus 5cm}void menu\-Libere (
+\begin{DoxyParamCaption}
+\item[{{\bf Menu} $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_a34b85deb1b80624723eb74d040e2a773}
+
+
+this procedure frees the space allocated for the menu in the memory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is a pointer on the structure \hyperlink{struct_menu}{Menu} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+25 \{
+\end{DoxyCode}
+\hypertarget{menu_8c_aba4d8d6149690486e6c75ff6855797f3}{\index{menu.\-c@{menu.\-c}!menu\-Loop@{menu\-Loop}}
+\index{menu\-Loop@{menu\-Loop}!menu.c@{menu.\-c}}
+\subsubsection[{menu\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}void menu\-Loop (
+\begin{DoxyParamCaption}
+\item[{{\bf Menu} $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_aba4d8d6149690486e6c75ff6855797f3}
+
+
+this procedure takes control of the menu loop 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is a pointer on the structure \hyperlink{struct_menu}{Menu} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+55     \{
+56         \hyperlink{menu_8c_a4073edd79322249c99028b252507ae48}{menuAff}(m);
+57         cm = \hyperlink{menu_8c_a0de1af91f2b98e059ce0463e78188273}{menuQuestion}(m);
+58         m->\hyperlink{struct_menu_a43d008d7b0ca36a3128f0184d8f6c8a6}{lignes}[ cm ].\hyperlink{struct_menu_ligne_af21aefbf248a35b3a12018a8eacabc37}{fonction\_commande}();
+59     \}
+60 \}
+61 \end{DoxyCode}
+\hypertarget{menu_8c_a0de1af91f2b98e059ce0463e78188273}{\index{menu.\-c@{menu.\-c}!menu\-Question@{menu\-Question}}
+\index{menu\-Question@{menu\-Question}!menu.c@{menu.\-c}}
+\subsubsection[{menu\-Question}]{\setlength{\rightskip}{0pt plus 5cm}int menu\-Question (
+\begin{DoxyParamCaption}
+\item[{const {\bf Menu} $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{menu_8c_a0de1af91f2b98e059ce0463e78188273}
+
+\begin{DoxyCode}
+40     \{
+41         \textcolor{keywordflow}{if} (scanf(\textcolor{stringliteral}{"%d"},&cm)!=1) scanf(\textcolor{stringliteral}{"%s"},dum);
+42         \textcolor{keywordflow}{if} ((cm<0) || (cm>=m->\hyperlink{struct_menu_a07ebd3fcf6bb339077496fa00b10229e}{nb\_lignes}))
+43             printf(\textcolor{stringliteral}{"Erreur choix menu\(\backslash\)n"});
+44         \textcolor{keywordflow}{else} ok=1;
+45         fflush(stdout);
+46     \} \textcolor{keywordflow}{while}(ok==0);
+47     printf(\textcolor{stringliteral}{"\(\backslash\)n"}); fflush(stdout);
+48     \textcolor{keywordflow}{return} cm;
+49 \}
+50 
+51 \textcolor{keywordtype}{void} \hyperlink{menu_8c_aba4d8d6149690486e6c75ff6855797f3}{menuLoop}(\hyperlink{struct_menu}{Menu} *m)
+\end{DoxyCode}

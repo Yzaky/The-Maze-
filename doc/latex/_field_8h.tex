@@ -1,0 +1,273 @@
+\hypertarget{_field_8h}{\section{src/\-Field.h File Reference}
+\label{_field_8h}\index{src/\-Field.\-h@{src/\-Field.\-h}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_field}{Field}
+\begin{DoxyCompactList}\small\item\em Defining the \hyperlink{struct_field}{Field} structure , which takes the dimensions X and Y and an 2\-D Array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_field_8h_abfc8f478955b992a869cd91b24fa6de2}{field\-Init} (\hyperlink{struct_field}{Field} $\ast$, const char file\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This procedure initialize the field (map) and allocate each case's memory depending on the dimensions. \end{DoxyCompactList}\item 
+void \hyperlink{_field_8h_aa533ea4fbe3892f030431f2737b1cdfe}{field\-Free} (\hyperlink{struct_field}{Field} $\ast$)
+\begin{DoxyCompactList}\small\item\em Sets free the space allocated for the field in the previous Procedure. \end{DoxyCompactList}\item 
+int \hyperlink{_field_8h_a9ad71f3476a696e394253c96a50bb8f3}{field\-Pos\-Valid} (const \hyperlink{struct_field}{Field} $\ast$, const int x, const int y)
+\begin{DoxyCompactList}\small\item\em Checks and verify that a case's coordinates are valid. \end{DoxyCompactList}\item 
+const char \hyperlink{_field_8h_a830db2a2c081711e709fbcc1a9db1d9f}{field\-Get\-X\-Y} (const \hyperlink{struct_field}{Field} $\ast$, const int x, const int y)
+\begin{DoxyCompactList}\small\item\em Returns the case pointed by the coordinates given in the parametres. \end{DoxyCompactList}\item 
+void \hyperlink{_field_8h_ae2497721317eeb928af540c9bc6a566c}{field\-Set\-X\-Y} (const \hyperlink{struct_field}{Field} $\ast$, const int x, const int y, const char val)
+\begin{DoxyCompactList}\small\item\em Puts the value given in the parametres in the case indicated. \end{DoxyCompactList}\item 
+const int \hyperlink{_field_8h_a0ba0f84660f4968a1ce203278f3c2bd4}{field\-Get\-Dim\-X} (const \hyperlink{struct_field}{Field} $\ast$)
+\begin{DoxyCompactList}\small\item\em This function returns the field case's position on the abscissa axe. \end{DoxyCompactList}\item 
+const int \hyperlink{_field_8h_a0c97135c3320a1fcb1cdc068a9182de0}{field\-Get\-Dim\-Y} (const \hyperlink{struct_field}{Field} $\ast$)
+\begin{DoxyCompactList}\small\item\em This function returns the field case's position on the ordinate axe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_field_8h_aa533ea4fbe3892f030431f2737b1cdfe}{\index{Field.\-h@{Field.\-h}!field\-Free@{field\-Free}}
+\index{field\-Free@{field\-Free}!Field.h@{Field.\-h}}
+\subsubsection[{field\-Free}]{\setlength{\rightskip}{0pt plus 5cm}void field\-Free (
+\begin{DoxyParamCaption}
+\item[{{\bf Field} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{_field_8h_aa533ea4fbe3892f030431f2737b1cdfe}
+
+
+Sets free the space allocated for the field in the previous Procedure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{struct_field}{Field}} & pointer on the Structure \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keywordtype}{int} y;
+51 
+52     \textcolor{keywordflow}{for} (y=0; y<fieldP->dimY; y++)
+53     free(fieldP->tab[y]);
+54     free(fieldP->tab);
+55 
+56     fieldP->dimX = 0;
+57     fieldP->dimY = 0;
+58     fieldP->tab = NULL;
+59 \}
+\end{DoxyCode}
+\hypertarget{_field_8h_a0ba0f84660f4968a1ce203278f3c2bd4}{\index{Field.\-h@{Field.\-h}!field\-Get\-Dim\-X@{field\-Get\-Dim\-X}}
+\index{field\-Get\-Dim\-X@{field\-Get\-Dim\-X}!Field.h@{Field.\-h}}
+\subsubsection[{field\-Get\-Dim\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int field\-Get\-Dim\-X (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{_field_8h_a0ba0f84660f4968a1ce203278f3c2bd4}
+
+
+This function returns the field case's position on the abscissa axe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{struct_field}{Field}} & pointer on the Structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+x int the dimension of the field on the abscissa axe 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+86 \{
+87     \textcolor{keywordflow}{return} fieldP->dimX;
+88 \}
+\end{DoxyCode}
+\hypertarget{_field_8h_a0c97135c3320a1fcb1cdc068a9182de0}{\index{Field.\-h@{Field.\-h}!field\-Get\-Dim\-Y@{field\-Get\-Dim\-Y}}
+\index{field\-Get\-Dim\-Y@{field\-Get\-Dim\-Y}!Field.h@{Field.\-h}}
+\subsubsection[{field\-Get\-Dim\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int field\-Get\-Dim\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{_field_8h_a0c97135c3320a1fcb1cdc068a9182de0}
+
+
+This function returns the field case's position on the ordinate axe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{struct_field}{Field}} & pointer on the Structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+y int the dimension of the field on the ordinate axe 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+91 \{
+92     \textcolor{keywordflow}{return} fieldP->dimY;
+93 \}
+\end{DoxyCode}
+\hypertarget{_field_8h_a830db2a2c081711e709fbcc1a9db1d9f}{\index{Field.\-h@{Field.\-h}!field\-Get\-X\-Y@{field\-Get\-X\-Y}}
+\index{field\-Get\-X\-Y@{field\-Get\-X\-Y}!Field.h@{Field.\-h}}
+\subsubsection[{field\-Get\-X\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const char field\-Get\-X\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} $\ast$}]{, }
+\item[{const int}]{x, }
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+)}}\label{_field_8h_a830db2a2c081711e709fbcc1a9db1d9f}
+
+
+Returns the case pointed by the coordinates given in the parametres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{struct_field}{Field}} & pointer on the Structure \\
+\hline
+{\em x} & int the position on the abscissa axe \\
+\hline
+{\em y} & int the position on the ordinate axe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tab\mbox{[}x\mbox{]}\mbox{[}y\mbox{]} after verifying it's existence. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+69 \{
+70     assert( x>=0) ;
+71     assert( y>=0) ;
+72     assert( x<fieldP->dimX ) ;
+73     assert( y<fieldP->dimY ) ;
+74     \textcolor{keywordflow}{return} fieldP->tab[y][x];
+75 \}
+\end{DoxyCode}
+\hypertarget{_field_8h_abfc8f478955b992a869cd91b24fa6de2}{\index{Field.\-h@{Field.\-h}!field\-Init@{field\-Init}}
+\index{field\-Init@{field\-Init}!Field.h@{Field.\-h}}
+\subsubsection[{field\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void field\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf Field} $\ast$}]{, }
+\item[{const char}]{file\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_field_8h_abfc8f478955b992a869cd91b24fa6de2}
+
+
+This procedure initialize the field (map) and allocate each case's memory depending on the dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{struct_field}{Field}} & pointer on the structure \\
+\hline
+{\em file} & that contains the map to draw in the tab \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+7 \{
+8     \textcolor{keywordtype}{int} x,y;
+9     FILE *filename;
+10     \textcolor{keywordtype}{int} i , j;
+11     \textcolor{keywordtype}{char} random\_field[19][30];
+12     filename=fopen(file,\textcolor{stringliteral}{"r"});
+13     \textcolor{keywordflow}{for} (i = 0; i < 19; i++)
+14 \{
+15 
+16     \textcolor{keywordflow}{for} (j = 0; j < 30; j++)
+17     \{
+18          fscanf(filename, \textcolor{stringliteral}{"%c"}, &random\_field[i][j]);
+19 
+20     \}
+21 
+22     fscanf(filename, \textcolor{stringliteral}{"\(\backslash\)n"});
+23 \}
+24 
+25     \textcolor{keywordflow}{for} (i = 0; i < 19; i++)
+26 \{
+27 
+28     \textcolor{keywordflow}{for} (j = 0; j < 30; j++)
+29     \{
+30         printf(\textcolor{stringliteral}{"%c"},random\_field[i][j]);
+31     \}
+32 
+33     printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+34 \}
+35     fclose(filename);
+36     fieldP->dimX = 30;
+37     fieldP->dimY = 19;
+38 
+39     fieldP->tab = (\textcolor{keywordtype}{char}**)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char} *)*fieldP->dimY);
+40     \textcolor{keywordflow}{for} (y=0; y<fieldP->dimY; y++)
+41         fieldP->tab[y] = (\textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*fieldP->dimX);
+42 
+43     \textcolor{keywordflow}{for}(y=0;y<fieldP->dimY;y++)
+44         \{\textcolor{keywordflow}{for}(x=0;x<fieldP->dimX;x++)
+45     fieldP->tab[y][x] = random\_field[y][x];\}
+46 
+47 \}
+\end{DoxyCode}
+\hypertarget{_field_8h_a9ad71f3476a696e394253c96a50bb8f3}{\index{Field.\-h@{Field.\-h}!field\-Pos\-Valid@{field\-Pos\-Valid}}
+\index{field\-Pos\-Valid@{field\-Pos\-Valid}!Field.h@{Field.\-h}}
+\subsubsection[{field\-Pos\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}int field\-Pos\-Valid (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} $\ast$}]{, }
+\item[{const int}]{x, }
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+)}}\label{_field_8h_a9ad71f3476a696e394253c96a50bb8f3}
+
+
+Checks and verify that a case's coordinates are valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{struct_field}{Field}} & pointer on the Structure \\
+\hline
+{\em x} & int the position on the abscissa axe \\
+\hline
+{\em y} & int the position on the ordinate axe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+61 \{
+62     \textcolor{keywordflow}{if} (x>=0 && x<fieldP->dimX && y>=0 && y<fieldP->dimY && fieldP->tab[y][x]!=\textcolor{charliteral}{'#'})
+63         \textcolor{keywordflow}{return} 1;
+64     \textcolor{keywordflow}{else}
+65         \textcolor{keywordflow}{return} 0;
+66 \}
+\end{DoxyCode}
+\hypertarget{_field_8h_ae2497721317eeb928af540c9bc6a566c}{\index{Field.\-h@{Field.\-h}!field\-Set\-X\-Y@{field\-Set\-X\-Y}}
+\index{field\-Set\-X\-Y@{field\-Set\-X\-Y}!Field.h@{Field.\-h}}
+\subsubsection[{field\-Set\-X\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void field\-Set\-X\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Field} $\ast$}]{, }
+\item[{const int}]{x, }
+\item[{const int}]{y, }
+\item[{const char}]{val}
+\end{DoxyParamCaption}
+)}}\label{_field_8h_ae2497721317eeb928af540c9bc6a566c}
+
+
+Puts the value given in the parametres in the case indicated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & int the position of the case on the abscissa axe \\
+\hline
+{\em y} & int the position of the case on the ordinate axe \\
+\hline
+{\em val} & char the value that we want to put in the case \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+78 \{
+79     assert( x>=0) ;
+80     assert( y>=0) ;
+81     assert( x<fieldP->dimX ) ;
+82     assert( y<fieldP->dimY ) ;
+83     fieldP->tab[y][x] = val;
+84 \}
+\end{DoxyCode}

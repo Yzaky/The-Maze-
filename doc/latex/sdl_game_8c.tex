@@ -1,0 +1,833 @@
+\hypertarget{sdl_game_8c}{\section{src/sdl\-Game.c File Reference}
+\label{sdl_game_8c}\index{src/sdl\-Game.\-c@{src/sdl\-Game.\-c}}
+}
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}sdl\-Game.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Game.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$S\-D\-L/\-S\-D\-L\-\_\-mixer.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{S\-D\-L\-\_\-load\-\_\-image} (const char $\ast$filename)
+\item 
+void \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{S\-D\-L\-\_\-apply\-\_\-surface} (S\-D\-L\-\_\-\-Surface $\ast$source, S\-D\-L\-\_\-\-Surface $\ast$destination, int x, int y)
+\item 
+void \hyperlink{sdl_game_8c_aac842d4faca5d227b16a31597626b70a}{sdl\-Game\-Init} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P, const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Procedure to initialize the game in graphics mode using S\-D\-L functions. \end{DoxyCompactList}\item 
+void \hyperlink{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{sdl\-Game\-Monitor} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P)
+\item 
+void \hyperlink{sdl_game_8c_a4f166a2ea173ce84196d478b16599441}{sdl\-Game\-About} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P, int $\ast$refresh, int $\ast$continue\-\_\-loop)
+\item 
+void \hyperlink{sdl_game_8c_a951cc6f5ec633e6158e385aa7120bd53}{sdl\-Game\-Menu} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P, int $\ast$refresh, int $\ast$continue\-\_\-loop)
+\item 
+void \hyperlink{sdl_game_8c_a864a89fa929dfdcd4144214fdb2979dc}{sdl\-Game\-Loop\-About} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P)
+\begin{DoxyCompactList}\small\item\em Procedure which takes control of the about page using the sdl\-Game\-About private procedure. \end{DoxyCompactList}\item 
+void \hyperlink{sdl_game_8c_ad1d9908b6b134998092307ac2e452897}{sdl\-Game\-Loop\-Menu} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P)
+\begin{DoxyCompactList}\small\item\em Procedure which takes control of the menu loop using the private funciton sdl\-Game\-Menu which is the menu of the game with it's components. \end{DoxyCompactList}\item 
+void \hyperlink{sdl_game_8c_ae0d9a5d1dd108b5a41a1c1e1806db1a5}{sdl\-Game\-Loop\-Level3} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P)
+\begin{DoxyCompactList}\small\item\em Procedure which takes control of the third level of the \hyperlink{struct_game}{Game}. \end{DoxyCompactList}\item 
+void \hyperlink{sdl_game_8c_aca6be277a493901f4516e1dee04a769e}{sdl\-Game\-Loop\-Level2} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P)
+\begin{DoxyCompactList}\small\item\em Procedure which takes control of the second level of the \hyperlink{struct_game}{Game}. \end{DoxyCompactList}\item 
+void \hyperlink{sdl_game_8c_a088b6dc65467ede1ac21b30e559f8ea3}{sdl\-Game\-Loop\-Level1} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P)
+\begin{DoxyCompactList}\small\item\em Procedure which takes control of the first level of the \hyperlink{struct_game}{Game}. \end{DoxyCompactList}\item 
+int \hyperlink{sdl_game_8c_ad04e8f5dedba048dee5ffcdc272a5597}{sdl\-Keymove} (int $\ast$continue\-\_\-loop, \hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P)
+\begin{DoxyCompactList}\small\item\em Function used to move the ball according to the key taped , using the game\-Keyboard function. \end{DoxyCompactList}\item 
+void \hyperlink{sdl_game_8c_a22858fcdcb928db5ec83c74e0617f7f8}{sdl\-Game\-End} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P, int $\ast$refresh, int $\ast$continue\-\_\-loop)
+\begin{DoxyCompactList}\small\item\em Procedure which display the winning image at the end when you win , with a return and restart button. \end{DoxyCompactList}\item 
+void \hyperlink{sdl_game_8c_a7680882d60949a9cb3c341a2b88730a0}{sdl\-Game\-Free} (\hyperlink{structsdl_game}{sdl\-Game} $\ast$sdl\-Game\-P)
+\begin{DoxyCompactList}\small\item\em Procedure to set free the memory allocated for the game that was previously initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{sdl_game_8c_a6c3723683dfe1e0731a0f01ebc2e84f9}{T\-A\-I\-L\-L\-E\-\_\-\-S\-P\-R\-I\-T\-E} =32
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!S\-D\-L\-\_\-apply\-\_\-surface@{S\-D\-L\-\_\-apply\-\_\-surface}}
+\index{S\-D\-L\-\_\-apply\-\_\-surface@{S\-D\-L\-\_\-apply\-\_\-surface}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{S\-D\-L\-\_\-apply\-\_\-surface}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-\_\-apply\-\_\-surface (
+\begin{DoxyParamCaption}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{source, }
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{destination, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}
+
+\begin{DoxyCode}
+558 \{
+559 
+560     SDL\_Rect offset;
+561 
+562 
+563     offset.x = x;
+564     offset.y = y;
+565 
+566 
+567     SDL\_BlitSurface( source, NULL, destination, &offset );
+568 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!S\-D\-L\-\_\-load\-\_\-image@{S\-D\-L\-\_\-load\-\_\-image}}
+\index{S\-D\-L\-\_\-load\-\_\-image@{S\-D\-L\-\_\-load\-\_\-image}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{S\-D\-L\-\_\-load\-\_\-image}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-\_\-\-Surface $\ast$ S\-D\-L\-\_\-load\-\_\-image (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}
+
+\begin{DoxyCode}
+533 \{
+534 
+535     SDL\_Surface* loadedImage = NULL;
+536 
+537 
+538     SDL\_Surface* optimizedImage = NULL;
+539 
+540 
+541     loadedImage = SDL\_LoadBMP( filename );
+542 
+543     \textcolor{keywordflow}{if} ( loadedImage != NULL )
+544     \{
+545 
+546         optimizedImage = SDL\_DisplayFormat( loadedImage );
+547 
+548 
+549         SDL\_FreeSurface( loadedImage );
+550     \}
+551 
+552 
+553     \textcolor{keywordflow}{return} optimizedImage;
+554 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_a4f166a2ea173ce84196d478b16599441}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-About@{sdl\-Game\-About}}
+\index{sdl\-Game\-About@{sdl\-Game\-About}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-About}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-About (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{sdl\-Game\-P, }
+\item[{int $\ast$}]{refresh, }
+\item[{int $\ast$}]{continue\-\_\-loop}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_a4f166a2ea173ce84196d478b16599441}
+
+\begin{DoxyCode}
+119 \{
+120     \textcolor{keywordtype}{int} x,y;
+121     \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}( sdlGameP->\hyperlink{structsdl_game_a3694e2c887e48ac072e001a1e6d7afed}{surface\_about}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen},0,0);
+122     \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}( sdlGameP->\hyperlink{structsdl_game_ae44e97da75374b6f41f14486332e7dba}{surface\_close}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen},0,0);
+123     SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} );
+124     SDL\_GetMouseState(&x,&y);
+125     SDL\_PumpEvents();
+126         SDL\_GetMouseState(&x,&y);
+127     \textcolor{keywordflow}{if} (x>0 && x<70 && y>548     && y<607 && (SDL\_GetMouseState(NULL,NULL)&SDL\_BUTTON(1)))
+128     \{
+129         *continue\_loop = 2;
+130         \hyperlink{sdl_game_8c_ad1d9908b6b134998092307ac2e452897}{sdlGameLoopMenu}(sdlGameP);
+131 
+132      \}
+133 
+134              \textcolor{keywordflow}{if} (x>0 && x<31 && y>0 && y<33 && (SDL\_GetMouseState(NULL,NULL)&SDL\_BUTTON(1)))
+135     \{
+136         *continue\_loop = 0;
+137     \}
+138 
+139 
+140     *refresh=0;
+141 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_a22858fcdcb928db5ec83c74e0617f7f8}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-End@{sdl\-Game\-End}}
+\index{sdl\-Game\-End@{sdl\-Game\-End}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-End}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-End (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{sdl\-Game\-P, }
+\item[{int $\ast$}]{refresh, }
+\item[{int $\ast$}]{continue\-\_\-loop}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_a22858fcdcb928db5ec83c74e0617f7f8}
+
+
+Procedure which display the winning image at the end when you win , with a return and restart button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\-Game\-P} & pointer on the Structure \hyperlink{structsdl_game}{sdl\-Game} \\
+\hline
+{\em refresh} & int for refreshment \\
+\hline
+{\em continue\-\_\-loop} & int used as a boolean \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+484 \{
+485 
+486     Mix\_Chunk* effect1;
+487     effect1 = Mix\_LoadWAV(\textcolor{stringliteral}{"data/effect1.wav"});
+488     Mix\_PlayChannel(-1,effect1,0);
+489     \textcolor{keywordtype}{int} x,y;
+490     \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}( sdlGameP->\hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen},0,0);
+491     \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}( sdlGameP->\hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen},928,576);
+492     \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}( sdlGameP->\hyperlink{structsdl_game_a103a17f5a7a4b3f1db83e4e109871210}{surface\_home}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen},0,576);
+493     SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} );
+494     SDL\_GetMouseState(&x,&y);
+495       SDL\_PumpEvents();
+496 
+497     \textcolor{keywordflow}{if} (x>928 && x<959 && y>575 && y<607 && (SDL\_GetMouseState(NULL,NULL)&SDL\_BUTTON(1)))
+498     \{   Mix\_FreeChunk(effect1);
+499         sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}.\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}.\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}=1; sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}.\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}.\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}=17;
+500     \}
+501     \textcolor{keywordflow}{if} (x>0 && x<31 && y>576 && y<607 && (SDL\_GetMouseState(NULL,NULL)&SDL\_BUTTON(1)))
+502     \{
+503       Mix\_FreeChunk(effect1);
+504 
+505         *continue\_loop = 2;
+506         \hyperlink{sdl_game_8c_ad1d9908b6b134998092307ac2e452897}{sdlGameLoopMenu}(sdlGameP);
+507     \}
+508 
+509     *refresh=0;
+510 
+511 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_a7680882d60949a9cb3c341a2b88730a0}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-Free@{sdl\-Game\-Free}}
+\index{sdl\-Game\-Free@{sdl\-Game\-Free}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-Free}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-Free (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_a7680882d60949a9cb3c341a2b88730a0}
+
+
+Procedure to set free the memory allocated for the game that was previously initialized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\-Game\-P} & pointer on the Structure \hyperlink{structsdl_game}{sdl\-Game} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+515 \{
+516     SDL\_FreeSurface( sdlGameP->\hyperlink{structsdl_game_aecad219d2fd8802f95ef5b19542880c9}{surface\_ball} );
+517     SDL\_FreeSurface( sdlGameP->\hyperlink{structsdl_game_a78af5dbd8ac60c62da4e1530b2f5d224}{surface\_wall} );
+518     SDL\_FreeSurface( sdlGameP->\hyperlink{structsdl_game_a29c6542f0f27a5c7d75584b0332818b1}{surface\_menu} );
+519     SDL\_FreeSurface( sdlGameP->\hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1} );
+520     SDL\_FreeSurface( sdlGameP->\hyperlink{structsdl_game_ae44e97da75374b6f41f14486332e7dba}{surface\_close});
+521     SDL\_FreeSurface( sdlGameP->\hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart});
+522     SDL\_FreeSurface( sdlGameP->\hyperlink{structsdl_game_a3694e2c887e48ac072e001a1e6d7afed}{surface\_about});
+523     SDL\_FreeSurface( sdlGameP->\hyperlink{structsdl_game_a910871d96b4426f5729b94901bf9e0f6}{surface\_end});
+524     SDL\_FreeSurface( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen});
+525     \hyperlink{_game_8c_ab71367a9873d5091056f8ae8c6de3548}{gameFree}(&(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}));
+526 
+527     SDL\_Quit();
+528 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_aac842d4faca5d227b16a31597626b70a}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-Init@{sdl\-Game\-Init}}
+\index{sdl\-Game\-Init@{sdl\-Game\-Init}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{, }
+\item[{const char $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_aac842d4faca5d227b16a31597626b70a}
+
+
+Procedure to initialize the game in graphics mode using S\-D\-L functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\-Game\-P} & pointer on the Structure \hyperlink{structsdl_game}{sdl\-Game} \\
+\hline
+{\em file} & a pointer on the file that opens at the beginning \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+17 \{
+18 
+19     \hyperlink{struct_game}{Game} *gameP;
+20     \textcolor{keywordtype}{int} dimX, dimY;
+21 
+22     gameP = &(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game});
+23     \hyperlink{_game_8c_a96fb6a624bf68ed92c564a261b4a4da5}{gameInit}(gameP,file);
+24 
+25     assert(   SDL\_Init( SDL\_INIT\_EVERYTHING )!= -1 );
+26 
+27     dimX = \hyperlink{_field_8c_afbca9de3aefdda43886ea10eca0caf4e}{fieldGetDimX}( \hyperlink{_game_8c_a13958611a02852e3d9d6bba8cf188aea}{gameGetConstField}(gameP) );
+28     dimY = \hyperlink{_field_8c_af7e542de6daa95a149ced308e0565f3e}{fieldGetDimY}( \hyperlink{_game_8c_a13958611a02852e3d9d6bba8cf188aea}{gameGetConstField}(gameP)  );
+29     dimX = dimX * \hyperlink{sdl_game_8c_a6c3723683dfe1e0731a0f01ebc2e84f9}{TAILLE\_SPRITE};
+30     dimY = dimY * \hyperlink{sdl_game_8c_a6c3723683dfe1e0731a0f01ebc2e84f9}{TAILLE\_SPRITE};
+31     sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} = SDL\_SetVideoMode(   dimX, dimY, 32, SDL\_SWSURFACE );
+32     assert( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen}!=NULL);
+33     SDL\_WM\_SetCaption( \textcolor{stringliteral}{"TheMaze"}, NULL );
+34 
+35     sdlGameP->\hyperlink{structsdl_game_aecad219d2fd8802f95ef5b19542880c9}{surface\_ball} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"data/ball.bmp"});
+36     \textcolor{keywordflow}{if} (sdlGameP->\hyperlink{structsdl_game_aecad219d2fd8802f95ef5b19542880c9}{surface\_ball}==NULL)
+37         sdlGameP->\hyperlink{structsdl_game_aecad219d2fd8802f95ef5b19542880c9}{surface\_ball} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"../data/ball.bmp"});
+38     assert( sdlGameP->\hyperlink{structsdl_game_aecad219d2fd8802f95ef5b19542880c9}{surface\_ball}!=NULL);
+39 
+40 
+41     sdlGameP->\hyperlink{structsdl_game_a78af5dbd8ac60c62da4e1530b2f5d224}{surface\_wall} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"data/Wall.bmp"});
+42     \textcolor{keywordflow}{if} (sdlGameP->\hyperlink{structsdl_game_a78af5dbd8ac60c62da4e1530b2f5d224}{surface\_wall}==NULL)
+43         sdlGameP->\hyperlink{structsdl_game_a78af5dbd8ac60c62da4e1530b2f5d224}{surface\_wall} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"../data/Wall.bmp"});
+44     assert( sdlGameP->\hyperlink{structsdl_game_a78af5dbd8ac60c62da4e1530b2f5d224}{surface\_wall}!=NULL);
+45 
+46     sdlGameP->\hyperlink{structsdl_game_a910871d96b4426f5729b94901bf9e0f6}{surface\_end} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"data/door.bmp"});
+47     \textcolor{keywordflow}{if} (sdlGameP->\hyperlink{structsdl_game_a910871d96b4426f5729b94901bf9e0f6}{surface\_end}==NULL)
+48         sdlGameP->\hyperlink{structsdl_game_a910871d96b4426f5729b94901bf9e0f6}{surface\_end} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"../data/door.bmp"});
+49     assert( sdlGameP->\hyperlink{structsdl_game_a910871d96b4426f5729b94901bf9e0f6}{surface\_end}!=NULL);
+50 
+51     sdlGameP->\hyperlink{structsdl_game_a29c6542f0f27a5c7d75584b0332818b1}{surface\_menu} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"data/menu.bmp"});
+52     \textcolor{keywordflow}{if} (sdlGameP->\hyperlink{structsdl_game_a29c6542f0f27a5c7d75584b0332818b1}{surface\_menu}==NULL)
+53         sdlGameP->\hyperlink{structsdl_game_a29c6542f0f27a5c7d75584b0332818b1}{surface\_menu} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"../data/menu.bmp"});
+54     assert( sdlGameP->\hyperlink{structsdl_game_a29c6542f0f27a5c7d75584b0332818b1}{surface\_menu}!=NULL);
+55 
+56     sdlGameP->\hyperlink{structsdl_game_a3694e2c887e48ac072e001a1e6d7afed}{surface\_about} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"data/about.bmp"});
+57     \textcolor{keywordflow}{if} (sdlGameP->\hyperlink{structsdl_game_a3694e2c887e48ac072e001a1e6d7afed}{surface\_about}==NULL)
+58         sdlGameP->\hyperlink{structsdl_game_a3694e2c887e48ac072e001a1e6d7afed}{surface\_about} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"../data/about.bmp"});
+59     assert( sdlGameP->\hyperlink{structsdl_game_a3694e2c887e48ac072e001a1e6d7afed}{surface\_about}!=NULL);
+60 
+61       sdlGameP->\hyperlink{structsdl_game_ae44e97da75374b6f41f14486332e7dba}{surface\_close}= \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"data/exit1.bmp"});
+62     \textcolor{keywordflow}{if} (sdlGameP->\hyperlink{structsdl_game_ae44e97da75374b6f41f14486332e7dba}{surface\_close}==NULL)
+63         sdlGameP->\hyperlink{structsdl_game_ae44e97da75374b6f41f14486332e7dba}{surface\_close}= \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"../data/exit1.bmp"});
+64     assert( sdlGameP->\hyperlink{structsdl_game_ae44e97da75374b6f41f14486332e7dba}{surface\_close}!=NULL);
+65 
+66     sdlGameP->\hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"data/winner.bmp"});
+67     SDL\_SetColorKey(sdlGameP->\hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1},SDL\_SRCCOLORKEY,SDL\_MapRGB(sdlGameP->
+      \hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1}->format,0,249,0));
+68     \textcolor{keywordflow}{if} (sdlGameP->\hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1}==NULL)\{
+69         sdlGameP->\hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"../data/winner.bmp"});
+70         SDL\_SetColorKey(sdlGameP->\hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1},SDL\_SRCCOLORKEY,SDL\_MapRGB(sdlGameP->
+      \hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1}->format,0,249,0));
+71     \}
+72     assert( sdlGameP->\hyperlink{structsdl_game_aea8a6e9c86a586df7bf3f2ad82c19b98}{surface\_win1}!=NULL);
+73 
+74     sdlGameP->\hyperlink{structsdl_game_a103a17f5a7a4b3f1db83e4e109871210}{surface\_home} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"data/home.bmp"});
+75     SDL\_SetColorKey(sdlGameP->\hyperlink{structsdl_game_a103a17f5a7a4b3f1db83e4e109871210}{surface\_home},SDL\_SRCCOLORKEY,SDL\_MapRGB(sdlGameP->
+      \hyperlink{structsdl_game_a103a17f5a7a4b3f1db83e4e109871210}{surface\_home}->format,255,255,255));
+76 
+77     \textcolor{keywordflow}{if} (sdlGameP->\hyperlink{structsdl_game_a103a17f5a7a4b3f1db83e4e109871210}{surface\_home}==NULL)\{
+78         sdlGameP->\hyperlink{structsdl_game_a103a17f5a7a4b3f1db83e4e109871210}{surface\_home} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"../data/home.bmp"});
+79         SDL\_SetColorKey(sdlGameP->\hyperlink{structsdl_game_a103a17f5a7a4b3f1db83e4e109871210}{surface\_home},SDL\_SRCCOLORKEY,SDL\_MapRGB(sdlGameP->
+      \hyperlink{structsdl_game_a103a17f5a7a4b3f1db83e4e109871210}{surface\_home}->format,255,255,255));
+80     \}
+81     assert( sdlGameP->\hyperlink{structsdl_game_ae44e97da75374b6f41f14486332e7dba}{surface\_close}!=NULL);
+82 
+83     sdlGameP->\hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"data/restart.bmp"});
+84     SDL\_SetColorKey(sdlGameP->\hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart},SDL\_SRCCOLORKEY,SDL\_MapRGB(sdlGameP->
+      \hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart}->format,255,255,255));
+85 
+86     \textcolor{keywordflow}{if} (sdlGameP->\hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart}==NULL)\{
+87         sdlGameP->\hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart} = \hyperlink{sdl_game_8c_a20b4d1d7e2f45bbc4d5f5c18fffce8a2}{SDL\_load\_image}(\textcolor{stringliteral}{"../data/restart.bmp"});
+88         SDL\_SetColorKey(sdlGameP->\hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart},SDL\_SRCCOLORKEY,SDL\_MapRGB(sdlGameP->
+      \hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart}->format,255,255,255));
+89     \}
+90     assert( sdlGameP->\hyperlink{structsdl_game_a33238e5f47ca5c025e8fbeeab80e6e13}{surface\_restart}!=NULL);
+91 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_a864a89fa929dfdcd4144214fdb2979dc}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-Loop\-About@{sdl\-Game\-Loop\-About}}
+\index{sdl\-Game\-Loop\-About@{sdl\-Game\-Loop\-About}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-Loop\-About}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-Loop\-About (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{sdl\-Game\-P}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_a864a89fa929dfdcd4144214fdb2979dc}
+
+
+Procedure which takes control of the about page using the sdl\-Game\-About private procedure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\-Game\-P} & pointer on the Structure \hyperlink{structsdl_game}{sdl\-Game} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+206 \{
+207 
+208     \textcolor{keywordtype}{int} continue\_loop = 3;
+209 
+210     \textcolor{keywordtype}{int} refresh;
+211 
+212 
+213     \hyperlink{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{sdlGameMonitor}(sdlGameP);
+214     assert( SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} )!=-1 );
+215 
+216 
+217 
+218         \textcolor{keywordflow}{while} (continue\_loop == 3)
+219     \{
+220         refresh = 0;
+221         \hyperlink{sdl_game_8c_a4f166a2ea173ce84196d478b16599441}{sdlGameAbout}(sdlGameP,&refresh,&continue\_loop);
+222 
+223     \}
+224 
+225 
+226 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_a088b6dc65467ede1ac21b30e559f8ea3}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-Loop\-Level1@{sdl\-Game\-Loop\-Level1}}
+\index{sdl\-Game\-Loop\-Level1@{sdl\-Game\-Loop\-Level1}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-Loop\-Level1}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-Loop\-Level1 (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{sdl\-Game\-P}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_a088b6dc65467ede1ac21b30e559f8ea3}
+
+
+Procedure which takes control of the first level of the \hyperlink{struct_game}{Game}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\-Game\-P} & pointer on the Structure \hyperlink{structsdl_game}{sdl\-Game} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+380 \{
+381 
+382     \textcolor{keywordtype}{int} continue\_loop = 1;
+383 
+384 
+385     \textcolor{keywordtype}{float} horloge\_courante\_carre, horloge\_precedente\_carre;
+386 
+387 
+388     \textcolor{keywordtype}{float} intervalle\_horloge\_carre = 0.05f;
+389     \textcolor{keywordtype}{int} refresh;
+390 
+391     \hyperlink{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{sdlGameMonitor}(sdlGameP);
+392     assert( SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} )!=-1 );
+393 
+394 
+395     horloge\_precedente\_carre = (float)clock()/(float)CLOCKS\_PER\_SEC;
+396 
+397 
+398 
+399 
+400 
+401 
+402     \textcolor{keywordflow}{while} ( continue\_loop == 1 )
+403     \{
+404 
+405                 refresh = 0;
+406 
+407 
+408                 horloge\_courante\_carre = (float)clock()/(float)CLOCKS\_PER\_SEC;
+409 
+410                         \textcolor{keywordflow}{if} (horloge\_courante\_carre-horloge\_precedente\_carre>=intervalle\_horloge\_carre)
+411                         \{
+412                             \hyperlink{sdl_game_8c_ad04e8f5dedba048dee5ffcdc272a5597}{sdlKeymove}(&continue\_loop,sdlGameP);
+413                             horloge\_precedente\_carre = horloge\_courante\_carre;
+414                             refresh = 1;
+415                         \}
+416 
+417 
+418                         \textcolor{keywordflow}{if} (horloge\_courante\_carre-horloge\_precedente\_carre>=intervalle\_horloge\_carre)
+419                         \{
+420                             \hyperlink{sdl_game_8c_ad04e8f5dedba048dee5ffcdc272a5597}{sdlKeymove}(&continue\_loop,sdlGameP);
+421 
+422 
+423                             horloge\_precedente\_carre = horloge\_courante\_carre;
+424                             refresh = 1;
+425                         \}
+426 
+427                     \textcolor{keywordflow}{if}(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}.\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}.\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}==28 && sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}.
+      \hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}.\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}==1)
+428                     \hyperlink{sdl_game_8c_a22858fcdcb928db5ec83c74e0617f7f8}{sdlGameEnd}(sdlGameP,&refresh,&continue\_loop);
+429 
+430                     \textcolor{keywordflow}{if} (refresh==1)
+431                         \{
+432 
+433                             \hyperlink{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{sdlGameMonitor}(sdlGameP);
+434 
+435 
+436                             SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} );
+437                         \}
+438     \}
+439 
+440 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_aca6be277a493901f4516e1dee04a769e}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-Loop\-Level2@{sdl\-Game\-Loop\-Level2}}
+\index{sdl\-Game\-Loop\-Level2@{sdl\-Game\-Loop\-Level2}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-Loop\-Level2}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-Loop\-Level2 (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{sdl\-Game\-P}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_aca6be277a493901f4516e1dee04a769e}
+
+
+Procedure which takes control of the second level of the \hyperlink{struct_game}{Game}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\-Game\-P} & pointer on the Structure \hyperlink{structsdl_game}{sdl\-Game} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+319 \{
+320 
+321     \textcolor{keywordtype}{int} continue\_loop = 1;
+322 
+323     \textcolor{keywordtype}{float} horloge\_courante\_carre, horloge\_precedente\_carre;
+324 
+325     \textcolor{keywordtype}{float} intervalle\_horloge\_carre = 0.05f;
+326     \textcolor{keywordtype}{int} refresh;
+327 
+328 
+329     \hyperlink{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{sdlGameMonitor}(sdlGameP);
+330     assert( SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} )!=-1 );
+331 
+332 
+333     horloge\_precedente\_carre = (float)clock()/(float)CLOCKS\_PER\_SEC;
+334 
+335 
+336     \textcolor{keywordflow}{while} ( continue\_loop == 1 )
+337     \{
+338 
+339                 refresh = 0;
+340 
+341 
+342                 horloge\_courante\_carre = (float)clock()/(float)CLOCKS\_PER\_SEC;
+343 
+344                         \textcolor{keywordflow}{if} (horloge\_courante\_carre-horloge\_precedente\_carre>=intervalle\_horloge\_carre)
+345                         \{
+346                             \hyperlink{sdl_game_8c_ad04e8f5dedba048dee5ffcdc272a5597}{sdlKeymove}(&continue\_loop,sdlGameP);
+347                             horloge\_precedente\_carre = horloge\_courante\_carre;
+348                             refresh = 1;
+349                         \}
+350 
+351 
+352 
+353                         \textcolor{keywordflow}{if} (horloge\_courante\_carre-horloge\_precedente\_carre>=intervalle\_horloge\_carre)
+354                         \{
+355                             \hyperlink{sdl_game_8c_ad04e8f5dedba048dee5ffcdc272a5597}{sdlKeymove}(&continue\_loop,sdlGameP);
+356 
+357 
+358                             horloge\_precedente\_carre = horloge\_courante\_carre;
+359                             refresh = 1;
+360                         \}
+361 
+362                     \textcolor{keywordflow}{if}(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}.\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}.\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}==28 && sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}.
+      \hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}.\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}==1)
+363                     \hyperlink{sdl_game_8c_a22858fcdcb928db5ec83c74e0617f7f8}{sdlGameEnd}(sdlGameP,&refresh,&continue\_loop);
+364 
+365                     \textcolor{keywordflow}{if} (refresh==1)
+366                         \{
+367 
+368                             \hyperlink{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{sdlGameMonitor}(sdlGameP);
+369 
+370 
+371                             SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} );
+372                         \}
+373 
+374     \}
+375 
+376 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_ae0d9a5d1dd108b5a41a1c1e1806db1a5}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-Loop\-Level3@{sdl\-Game\-Loop\-Level3}}
+\index{sdl\-Game\-Loop\-Level3@{sdl\-Game\-Loop\-Level3}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-Loop\-Level3}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-Loop\-Level3 (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{sdl\-Game\-P}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_ae0d9a5d1dd108b5a41a1c1e1806db1a5}
+
+
+Procedure which takes control of the third level of the \hyperlink{struct_game}{Game}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdl\-Game\-P} & pointer on the Structure \hyperlink{structsdl_game}{sdl\-Game} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+254 \{
+255 
+256     \textcolor{keywordtype}{int} continue\_loop = 1;
+257 
+258     \textcolor{keywordtype}{float} horloge\_courante\_carre, horloge\_precedente\_carre;
+259 
+260     \textcolor{keywordtype}{float} intervalle\_horloge\_carre = 0.05f;
+261     \textcolor{keywordtype}{int} refresh;
+262 
+263 
+264     \hyperlink{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{sdlGameMonitor}(sdlGameP);
+265     assert( SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} )!=-1 );
+266 
+267 
+268     horloge\_precedente\_carre = (float)clock()/(float)CLOCKS\_PER\_SEC;
+269 
+270 
+271     \textcolor{keywordflow}{while} ( continue\_loop == 1 )
+272     \{
+273 
+274                 refresh = 0;
+275 
+276 
+277                 horloge\_courante\_carre = (float)clock()/(float)CLOCKS\_PER\_SEC;
+278 
+279                         \textcolor{keywordflow}{if} (horloge\_courante\_carre-horloge\_precedente\_carre>=intervalle\_horloge\_carre)
+280                         \{
+281                             \hyperlink{sdl_game_8c_ad04e8f5dedba048dee5ffcdc272a5597}{sdlKeymove}(&continue\_loop,sdlGameP);
+282                             horloge\_precedente\_carre = horloge\_courante\_carre;
+283                             refresh = 1;
+284                         \}
+285 
+286 
+287 
+288                         \textcolor{keywordflow}{if} (horloge\_courante\_carre-horloge\_precedente\_carre>=intervalle\_horloge\_carre)
+289                         \{
+290                             \hyperlink{sdl_game_8c_ad04e8f5dedba048dee5ffcdc272a5597}{sdlKeymove}(&continue\_loop,sdlGameP);
+291 
+292 
+293                             horloge\_precedente\_carre = horloge\_courante\_carre;
+294                             refresh = 1;
+295                         \}
+296 
+297                     \textcolor{keywordflow}{if}(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}.\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}.\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}==28 && sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}.
+      \hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}.\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}==1)
+298                     \{
+299 
+300                         \hyperlink{sdl_game_8c_a22858fcdcb928db5ec83c74e0617f7f8}{sdlGameEnd}(sdlGameP,&refresh,&continue\_loop);
+301 
+302                     \}
+303 
+304 
+305                     \textcolor{keywordflow}{if} (refresh==1)
+306                         \{
+307 
+308                             \hyperlink{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{sdlGameMonitor}(sdlGameP);
+309 
+310 
+311                             SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} );
+312                         \}
+313 
+314     \}
+315 
+316 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_ad1d9908b6b134998092307ac2e452897}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-Loop\-Menu@{sdl\-Game\-Loop\-Menu}}
+\index{sdl\-Game\-Loop\-Menu@{sdl\-Game\-Loop\-Menu}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-Loop\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-Loop\-Menu (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_ad1d9908b6b134998092307ac2e452897}
+
+
+Procedure which takes control of the menu loop using the private funciton sdl\-Game\-Menu which is the menu of the game with it's components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structsdl_game}{sdl\-Game}} & pointer on the Structure \hyperlink{structsdl_game}{sdl\-Game} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+229 \{
+230     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* file=\textcolor{stringliteral}{"src/map0.txt"};
+231     \hyperlink{sdl_game_8c_aac842d4faca5d227b16a31597626b70a}{sdlGameInit}(sdlGameP,file);
+232     \textcolor{keywordtype}{int} continue\_loop = 2;
+233 
+234     \textcolor{keywordtype}{int} refresh;
+235 
+236 
+237     \hyperlink{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{sdlGameMonitor}(sdlGameP);
+238     assert( SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} )!=-1 );
+239 
+240 
+241 
+242         \textcolor{keywordflow}{while} (continue\_loop == 2)
+243     \{
+244         refresh = 0;
+245         \hyperlink{sdl_game_8c_a951cc6f5ec633e6158e385aa7120bd53}{sdlGameMenu}(sdlGameP,&refresh,&continue\_loop);
+246 
+247     \}
+248 
+249 
+250 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_a951cc6f5ec633e6158e385aa7120bd53}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-Menu@{sdl\-Game\-Menu}}
+\index{sdl\-Game\-Menu@{sdl\-Game\-Menu}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-Menu}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-Menu (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{sdl\-Game\-P, }
+\item[{int $\ast$}]{refresh, }
+\item[{int $\ast$}]{continue\-\_\-loop}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_a951cc6f5ec633e6158e385aa7120bd53}
+
+\begin{DoxyCode}
+144 \{
+145     Mix\_OpenAudio(MIX\_DEFAULT\_FREQUENCY,MIX\_DEFAULT\_FORMAT,2,1024);
+146     Mix\_Music* music;
+147     music=Mix\_LoadMUS(\textcolor{stringliteral}{"data/music.wav"});
+148     Mix\_PlayMusic(music,-1);
+149 
+150     \textcolor{keywordtype}{int} x,y;
+151     \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}( sdlGameP->\hyperlink{structsdl_game_a29c6542f0f27a5c7d75584b0332818b1}{surface\_menu}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen},0,0);
+152     \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}( sdlGameP->\hyperlink{structsdl_game_ae44e97da75374b6f41f14486332e7dba}{surface\_close}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen},0,0);
+153 
+154     SDL\_Flip( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen} );
+155     SDL\_GetMouseState(&x,&y);
+156     SDL\_PumpEvents();
+157         SDL\_GetMouseState(&x,&y);
+158 
+159     SDL\_PumpEvents();
+160 
+161     \textcolor{keywordflow}{if} (x>361 && x<576 && y>211 && y<254 && (SDL\_GetMouseState(NULL,NULL)&SDL\_BUTTON(1)))
+162     \{
+163         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* file=\textcolor{stringliteral}{"src/map1.txt"};
+164         \hyperlink{sdl_game_8c_aac842d4faca5d227b16a31597626b70a}{sdlGameInit}(sdlGameP,file);
+165         *continue\_loop=1;
+166         \hyperlink{sdl_game_8c_a088b6dc65467ede1ac21b30e559f8ea3}{sdlGameLoopLevel1}( sdlGameP );
+167      \}
+168 
+169 
+170     \textcolor{keywordflow}{if} (x>364 && x<587 && y>299 && y<339 && (SDL\_GetMouseState(NULL,NULL)&SDL\_BUTTON(1)))
+171     \{
+172         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* file=\textcolor{stringliteral}{"src/map2.txt"};
+173         \hyperlink{sdl_game_8c_aac842d4faca5d227b16a31597626b70a}{sdlGameInit}(sdlGameP,file);
+174         *continue\_loop=1;
+175         \hyperlink{sdl_game_8c_aca6be277a493901f4516e1dee04a769e}{sdlGameLoopLevel2}( sdlGameP );
+176 
+177      \}
+178 
+179     \textcolor{keywordflow}{if} (x>360 && x<582 && y>385 && y<425 && (SDL\_GetMouseState(NULL,NULL)&SDL\_BUTTON(1)))
+180     \{
+181         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* file=\textcolor{stringliteral}{"src/map3.txt"};
+182         \hyperlink{sdl_game_8c_aac842d4faca5d227b16a31597626b70a}{sdlGameInit}(sdlGameP,file);
+183         *continue\_loop=1;
+184         \hyperlink{sdl_game_8c_ae0d9a5d1dd108b5a41a1c1e1806db1a5}{sdlGameLoopLevel3}( sdlGameP );
+185 
+186      \}
+187 
+188          \textcolor{keywordflow}{if} (x>313 && x<617 && y>470 && y<514 && (SDL\_GetMouseState(NULL,NULL)&SDL\_BUTTON(1)))
+189     \{
+190 
+191         *continue\_loop=3;
+192         \hyperlink{sdl_game_8c_a864a89fa929dfdcd4144214fdb2979dc}{sdlGameLoopAbout}(sdlGameP);
+193 
+194      \}
+195 
+196          \textcolor{keywordflow}{if} (x>0 && x<31 && y>0 && y<33 && (SDL\_GetMouseState(NULL,NULL)&SDL\_BUTTON(1)))
+197     \{
+198         *continue\_loop = 0;
+199     \}
+200 
+201     Mix\_FreeMusic(music);
+202         *refresh=0;
+203 
+204 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Game\-Monitor@{sdl\-Game\-Monitor}}
+\index{sdl\-Game\-Monitor@{sdl\-Game\-Monitor}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Game\-Monitor}]{\setlength{\rightskip}{0pt plus 5cm}void sdl\-Game\-Monitor (
+\begin{DoxyParamCaption}
+\item[{{\bf sdl\-Game} $\ast$}]{sdl\-Game\-P}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_a8f375c49c1f7b82ed0c57a3c127ebdf0}
+
+\begin{DoxyCode}
+96 \{
+97     \textcolor{keywordtype}{int} x,y;
+98 
+99     \textcolor{keyword}{const} \hyperlink{struct_game}{Game} *gameP = &(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game});
+100     \textcolor{keyword}{const} \hyperlink{struct_field}{Field} *fieldP = \hyperlink{_game_8c_a13958611a02852e3d9d6bba8cf188aea}{gameGetConstField}(gameP);
+101     \textcolor{keyword}{const} \hyperlink{struct_ball}{Ball} *ballP = \hyperlink{_game_8c_a2a368d2441784499a0c9fdf0e4ce5191}{gameGetConstBall}(gameP);
+102 
+103     SDL\_FillRect( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen}, &sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen}->clip\_rect, SDL\_MapRGB( sdlGameP->\hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen}->format, 0x00, 
+      0x00, 0x00 ) );
+104 
+105     \textcolor{keywordflow}{for} (x=0;x<\hyperlink{_field_8c_afbca9de3aefdda43886ea10eca0caf4e}{fieldGetDimX}(fieldP);x++)
+106         \textcolor{keywordflow}{for} (y=0;y<\hyperlink{_field_8c_af7e542de6daa95a149ced308e0565f3e}{fieldGetDimY}(fieldP);y++)
+107             \textcolor{keywordflow}{if} (\hyperlink{_field_8c_a796a44bc3bff618c4c6d2d5b7bcea1f9}{fieldGetXY}(fieldP,x,y)==\textcolor{charliteral}{'#'})
+108                 \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}(  sdlGameP->\hyperlink{structsdl_game_a78af5dbd8ac60c62da4e1530b2f5d224}{surface\_wall}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen}, x*\hyperlink{sdl_game_8c_a6c3723683dfe1e0731a0f01ebc2e84f9}{TAILLE\_SPRITE}, y*TAILLE\_SPRITE);
+109 
+110 \textcolor{keywordflow}{for} (x=0;x<\hyperlink{_field_8c_afbca9de3aefdda43886ea10eca0caf4e}{fieldGetDimX}(fieldP);x++)
+111         \textcolor{keywordflow}{for} (y=0;y<\hyperlink{_field_8c_af7e542de6daa95a149ced308e0565f3e}{fieldGetDimY}(fieldP);y++)
+112             \textcolor{keywordflow}{if} (\hyperlink{_field_8c_a796a44bc3bff618c4c6d2d5b7bcea1f9}{fieldGetXY}(fieldP,x,y)==\textcolor{charliteral}{'?'})
+113                 \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}(  sdlGameP->\hyperlink{structsdl_game_a910871d96b4426f5729b94901bf9e0f6}{surface\_end}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen}, x*TAILLE\_SPRITE, y*TAILLE\_SPRITE);
+114 
+115     \hyperlink{sdl_game_8c_a695e055ca801891bb79cc6f68ecbf2ae}{SDL\_apply\_surface}(  sdlGameP->\hyperlink{structsdl_game_aecad219d2fd8802f95ef5b19542880c9}{surface\_ball}, sdlGameP->
+      \hyperlink{structsdl_game_add1b6b922a3601ae4115805c3a41fa8d}{surface\_screen}, \hyperlink{_ball_8c_adeb84f89e19e1880e73fc68689cba901}{ballGetX}(ballP)*TAILLE\_SPRITE,  \hyperlink{_ball_8c_a6c78f5c3a37642246c899f8b09afbf0a}{ballGetY}(ballP)*TAILLE\_SPRITE
+       );
+116 \}
+\end{DoxyCode}
+\hypertarget{sdl_game_8c_ad04e8f5dedba048dee5ffcdc272a5597}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!sdl\-Keymove@{sdl\-Keymove}}
+\index{sdl\-Keymove@{sdl\-Keymove}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{sdl\-Keymove}]{\setlength{\rightskip}{0pt plus 5cm}int sdl\-Keymove (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{continue\-\_\-loop, }
+\item[{{\bf sdl\-Game} $\ast$}]{sdl\-Game\-P}
+\end{DoxyParamCaption}
+)}}\label{sdl_game_8c_ad04e8f5dedba048dee5ffcdc272a5597}
+
+
+Function used to move the ball according to the key taped , using the game\-Keyboard function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em continue\-\_\-loop} & int a boolean \\
+\hline
+{\em sdl\-Game\-P} & pointer on the Structure \hyperlink{structsdl_game}{sdl\-Game} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+444 \{
+445     SDL\_Event event;
+446 
+447 
+448     Uint8* keystate = SDL\_GetKeyState(NULL);
+449 
+450 
+451     \textcolor{keywordflow}{if}(keystate[SDLK\_LEFT])
+452     \{\hyperlink{_game_8c_af230893bf1f5f7b67be0c569647ab3b0}{gameKeyboard}( &(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}), \textcolor{charliteral}{'g'});
+453     \}
+454     \textcolor{keywordflow}{if}(keystate[SDLK\_RIGHT])
+455     \{\hyperlink{_game_8c_af230893bf1f5f7b67be0c569647ab3b0}{gameKeyboard}( &(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}), \textcolor{charliteral}{'d'});
+456     \}
+457     \textcolor{keywordflow}{if}(keystate[SDLK\_UP])
+458     \{\hyperlink{_game_8c_af230893bf1f5f7b67be0c569647ab3b0}{gameKeyboard}( &(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}), \textcolor{charliteral}{'h'});
+459     \}
+460     \textcolor{keywordflow}{if}(keystate[SDLK\_DOWN])
+461     \{ \hyperlink{_game_8c_af230893bf1f5f7b67be0c569647ab3b0}{gameKeyboard}( &(sdlGameP->\hyperlink{structsdl_game_ac6a5ed6191fcf3a5bf0445921feb4f48}{game}), \textcolor{charliteral}{'b'});
+462     \}
+463     \textcolor{keywordflow}{while}(SDL\_PollEvent(&event))
+464      \{
+465      \textcolor{keywordflow}{switch} (event.type)
+466      \{
+467 
+468     \textcolor{keywordflow}{case} SDL\_QUIT:
+469         *continue\_loop = 0;
+470 
+471     \textcolor{keywordflow}{case} SDL\_KEYDOWN:
+472        \textcolor{keywordflow}{if}(event.key.keysym.sym == SDLK\_ESCAPE)
+473        *continue\_loop = 0;
+474 
+475     \textcolor{keywordflow}{break};
+476 
+477     \}
+478 \}
+479 \textcolor{keywordflow}{return} *continue\_loop;
+480 
+481 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{sdl_game_8c_a6c3723683dfe1e0731a0f01ebc2e84f9}{\index{sdl\-Game.\-c@{sdl\-Game.\-c}!T\-A\-I\-L\-L\-E\-\_\-\-S\-P\-R\-I\-T\-E@{T\-A\-I\-L\-L\-E\-\_\-\-S\-P\-R\-I\-T\-E}}
+\index{T\-A\-I\-L\-L\-E\-\_\-\-S\-P\-R\-I\-T\-E@{T\-A\-I\-L\-L\-E\-\_\-\-S\-P\-R\-I\-T\-E}!sdlGame.c@{sdl\-Game.\-c}}
+\subsubsection[{T\-A\-I\-L\-L\-E\-\_\-\-S\-P\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int T\-A\-I\-L\-L\-E\-\_\-\-S\-P\-R\-I\-T\-E =32}}\label{sdl_game_8c_a6c3723683dfe1e0731a0f01ebc2e84f9}

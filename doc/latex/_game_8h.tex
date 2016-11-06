@@ -1,0 +1,165 @@
+\hypertarget{_game_8h}{\section{src/\-Game.h File Reference}
+\label{_game_8h}\index{src/\-Game.\-h@{src/\-Game.\-h}}
+}
+{\ttfamily \#include \char`\"{}Ball.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Field.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_game}{Game}
+\begin{DoxyCompactList}\small\item\em defining the \hyperlink{struct_game}{Game} structure , which takes a field and a ball \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_game_8h_a96fb6a624bf68ed92c564a261b4a4da5}{game\-Init} (\hyperlink{struct_game}{Game} $\ast$game\-P, const char file\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em This Procedure initialize the game by allocating the ball and the field in the memory using ball\-Init and field\-Init. \end{DoxyCompactList}\item 
+void \hyperlink{_game_8h_ab71367a9873d5091056f8ae8c6de3548}{game\-Free} (\hyperlink{struct_game}{Game} $\ast$game\-P)
+\begin{DoxyCompactList}\small\item\em This Procedure set free the memory allocated for the game initialisation used by the previous Procedure. \end{DoxyCompactList}\item 
+const \hyperlink{struct_field}{Field} $\ast$ \hyperlink{_game_8h_a13958611a02852e3d9d6bba8cf188aea}{game\-Get\-Const\-Field} (const \hyperlink{struct_game}{Game} $\ast$game\-P)
+\begin{DoxyCompactList}\small\item\em Function to return the field used in the game. \end{DoxyCompactList}\item 
+const \hyperlink{struct_ball}{Ball} $\ast$ \hyperlink{_game_8h_a2a368d2441784499a0c9fdf0e4ce5191}{game\-Get\-Const\-Ball} (const \hyperlink{struct_game}{Game} $\ast$game\-P)
+\begin{DoxyCompactList}\small\item\em Function to return the \hyperlink{struct_ball}{Ball} used in the game. \end{DoxyCompactList}\item 
+void \hyperlink{_game_8h_af230893bf1f5f7b67be0c569647ab3b0}{game\-Keyboard} (\hyperlink{struct_game}{Game} $\ast$game\-P, const char val)
+\begin{DoxyCompactList}\small\item\em Procedure to move the \hyperlink{struct_ball}{Ball} on the field according to the key pressed after veryfing the validity of the case we need to step on. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_game_8h_ab71367a9873d5091056f8ae8c6de3548}{\index{Game.\-h@{Game.\-h}!game\-Free@{game\-Free}}
+\index{game\-Free@{game\-Free}!Game.h@{Game.\-h}}
+\subsubsection[{game\-Free}]{\setlength{\rightskip}{0pt plus 5cm}void game\-Free (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} $\ast$}]{game\-P}
+\end{DoxyParamCaption}
+)}}\label{_game_8h_ab71367a9873d5091056f8ae8c6de3548}
+
+
+This Procedure set free the memory allocated for the game initialisation used by the previous Procedure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\-P} & pointer on \hyperlink{struct_game}{Game} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+15 \{
+16     \hyperlink{_field_8c_a57b54d5d023361a5b5abbdd6f17dad17}{fieldFree}(&(gameP->\hyperlink{struct_game_a7dcfc38e2de5dafd89e3d4bda9760010}{field}));
+17 \}
+\end{DoxyCode}
+\hypertarget{_game_8h_a2a368d2441784499a0c9fdf0e4ce5191}{\index{Game.\-h@{Game.\-h}!game\-Get\-Const\-Ball@{game\-Get\-Const\-Ball}}
+\index{game\-Get\-Const\-Ball@{game\-Get\-Const\-Ball}!Game.h@{Game.\-h}}
+\subsubsection[{game\-Get\-Const\-Ball}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ball}$\ast$ game\-Get\-Const\-Ball (
+\begin{DoxyParamCaption}
+\item[{const {\bf Game} $\ast$}]{game\-P}
+\end{DoxyParamCaption}
+)}}\label{_game_8h_a2a368d2441784499a0c9fdf0e4ce5191}
+
+
+Function to return the \hyperlink{struct_ball}{Ball} used in the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\-P} & a pointer on the \hyperlink{struct_game}{Game} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{struct_ball}{Ball} 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+27 \{
+28     \textcolor{keywordflow}{return} &(gameP->\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball});
+29 \}
+\end{DoxyCode}
+\hypertarget{_game_8h_a13958611a02852e3d9d6bba8cf188aea}{\index{Game.\-h@{Game.\-h}!game\-Get\-Const\-Field@{game\-Get\-Const\-Field}}
+\index{game\-Get\-Const\-Field@{game\-Get\-Const\-Field}!Game.h@{Game.\-h}}
+\subsubsection[{game\-Get\-Const\-Field}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Field}$\ast$ game\-Get\-Const\-Field (
+\begin{DoxyParamCaption}
+\item[{const {\bf Game} $\ast$}]{game\-P}
+\end{DoxyParamCaption}
+)}}\label{_game_8h_a13958611a02852e3d9d6bba8cf188aea}
+
+
+Function to return the field used in the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\-P} & a pointer on the \hyperlink{struct_game}{Game} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{struct_field}{Field} 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+22 \{
+23     \textcolor{keywordflow}{return} &(gameP->\hyperlink{struct_game_a7dcfc38e2de5dafd89e3d4bda9760010}{field});
+24 \}
+\end{DoxyCode}
+\hypertarget{_game_8h_a96fb6a624bf68ed92c564a261b4a4da5}{\index{Game.\-h@{Game.\-h}!game\-Init@{game\-Init}}
+\index{game\-Init@{game\-Init}!Game.h@{Game.\-h}}
+\subsubsection[{game\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void game\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} $\ast$}]{game\-P, }
+\item[{const char}]{file\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_game_8h_a96fb6a624bf68ed92c564a261b4a4da5}
+
+
+This Procedure initialize the game by allocating the ball and the field in the memory using ball\-Init and field\-Init. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\-P} & pointer on \hyperlink{struct_game}{Game} \\
+\hline
+{\em file} & that contains the map to draw \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+7 \{
+8 
+9     \hyperlink{_ball_8c_ad65cd332c7015a87103e23a874c43d66}{ballInit}(&(gameP->\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}));
+10     \hyperlink{_field_8c_a8aae0ba6f7a23f1466edd10ad019117f}{fieldInit}(&(gameP->\hyperlink{struct_game_a7dcfc38e2de5dafd89e3d4bda9760010}{field}),file);
+11 
+12 \}
+\end{DoxyCode}
+\hypertarget{_game_8h_af230893bf1f5f7b67be0c569647ab3b0}{\index{Game.\-h@{Game.\-h}!game\-Keyboard@{game\-Keyboard}}
+\index{game\-Keyboard@{game\-Keyboard}!Game.h@{Game.\-h}}
+\subsubsection[{game\-Keyboard}]{\setlength{\rightskip}{0pt plus 5cm}void game\-Keyboard (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} $\ast$}]{game\-P, }
+\item[{const char}]{val}
+\end{DoxyParamCaption}
+)}}\label{_game_8h_af230893bf1f5f7b67be0c569647ab3b0}
+
+
+Procedure to move the \hyperlink{struct_ball}{Ball} on the field according to the key pressed after veryfing the validity of the case we need to step on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\-P} & pointer on \hyperlink{struct_game}{Game} \\
+\hline
+{\em val} & char the value used in the switch condition in order to define the movement position \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+33 \{
+34     \textcolor{keywordflow}{switch}(val)
+35     \{
+36         \textcolor{keywordflow}{case} \textcolor{charliteral}{'g'} :
+37                 \hyperlink{_ball_8c_aace25da6736b76c54080682ef5545b6c}{ballLeft}(&(gameP->\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}), &(gameP->\hyperlink{struct_game_a7dcfc38e2de5dafd89e3d4bda9760010}{field}));
+38                 \textcolor{keywordflow}{break};
+39         \textcolor{keywordflow}{case} \textcolor{charliteral}{'d'} :
+40                 \hyperlink{_ball_8c_ad1fd06b817cfc82d212f68c978cf42ee}{ballRight}(&(gameP->\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}), &(gameP->\hyperlink{struct_game_a7dcfc38e2de5dafd89e3d4bda9760010}{field}));
+41                 \textcolor{keywordflow}{break};
+42         \textcolor{keywordflow}{case} \textcolor{charliteral}{'h'} :
+43                 \hyperlink{_ball_8c_ad272a2bac319d1128c214f8e8c801ff1}{ballUp}(&(gameP->\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}), &(gameP->\hyperlink{struct_game_a7dcfc38e2de5dafd89e3d4bda9760010}{field}));
+44                 \textcolor{keywordflow}{break};
+45         \textcolor{keywordflow}{case} \textcolor{charliteral}{'b'} :
+46                 \hyperlink{_ball_8c_a526ca60b1ea9744aab2e253c7c367b45}{ballDown}(&(gameP->\hyperlink{struct_game_a15de41d45a60a7649d561f53ca88352c}{ball}), &(gameP->\hyperlink{struct_game_a7dcfc38e2de5dafd89e3d4bda9760010}{field}));
+47                 \textcolor{keywordflow}{break};
+48     \}
+49 \}
+\end{DoxyCode}

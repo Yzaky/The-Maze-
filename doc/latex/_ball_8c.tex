@@ -1,0 +1,201 @@
+\hypertarget{_ball_8c}{\section{src/\-Ball.c File Reference}
+\label{_ball_8c}\index{src/\-Ball.\-c@{src/\-Ball.\-c}}
+}
+{\ttfamily \#include \char`\"{}Ball.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_ball_8c_ad65cd332c7015a87103e23a874c43d66}{ball\-Init} (\hyperlink{struct_ball}{Ball} $\ast$ball\-P)
+\begin{DoxyCompactList}\small\item\em This procedure will initialize the ball at the beginning of the map level. \end{DoxyCompactList}\item 
+void \hyperlink{_ball_8c_aace25da6736b76c54080682ef5545b6c}{ball\-Left} (\hyperlink{struct_ball}{Ball} $\ast$ball\-P, const \hyperlink{struct_field}{Field} $\ast$field\-P)
+\begin{DoxyCompactList}\small\item\em ball\-Left verifies that the case on the left of the ball is valid and the ball can step in \end{DoxyCompactList}\item 
+void \hyperlink{_ball_8c_ad1fd06b817cfc82d212f68c978cf42ee}{ball\-Right} (\hyperlink{struct_ball}{Ball} $\ast$ball\-P, const \hyperlink{struct_field}{Field} $\ast$field\-P)
+\begin{DoxyCompactList}\small\item\em ball\-Right verifies that the case on the right of the ball is valid and the ball can step in \end{DoxyCompactList}\item 
+void \hyperlink{_ball_8c_ad272a2bac319d1128c214f8e8c801ff1}{ball\-Up} (\hyperlink{struct_ball}{Ball} $\ast$ball\-P, const \hyperlink{struct_field}{Field} $\ast$field\-P)
+\begin{DoxyCompactList}\small\item\em ball\-Up verifies that the case above the ball is valid and the ball can step in \end{DoxyCompactList}\item 
+void \hyperlink{_ball_8c_a526ca60b1ea9744aab2e253c7c367b45}{ball\-Down} (\hyperlink{struct_ball}{Ball} $\ast$ball\-P, const \hyperlink{struct_field}{Field} $\ast$field\-P)
+\begin{DoxyCompactList}\small\item\em ball\-Down verifies that the case beneath the ball is valid and the ball can step in \end{DoxyCompactList}\item 
+int \hyperlink{_ball_8c_adeb84f89e19e1880e73fc68689cba901}{ball\-Get\-X} (const \hyperlink{struct_ball}{Ball} $\ast$ball\-P)
+\begin{DoxyCompactList}\small\item\em This function returns the ball's position on the abscissa axe. \end{DoxyCompactList}\item 
+int \hyperlink{_ball_8c_a6c78f5c3a37642246c899f8b09afbf0a}{ball\-Get\-Y} (const \hyperlink{struct_ball}{Ball} $\ast$ball\-P)
+\begin{DoxyCompactList}\small\item\em This function returns the ball's position on the ordinate axe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_ball_8c_a526ca60b1ea9744aab2e253c7c367b45}{\index{Ball.\-c@{Ball.\-c}!ball\-Down@{ball\-Down}}
+\index{ball\-Down@{ball\-Down}!Ball.c@{Ball.\-c}}
+\subsubsection[{ball\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void ball\-Down (
+\begin{DoxyParamCaption}
+\item[{{\bf Ball} $\ast$}]{ball\-P, }
+\item[{const {\bf Field} $\ast$}]{field\-P}
+\end{DoxyParamCaption}
+)}}\label{_ball_8c_a526ca60b1ea9744aab2e253c7c367b45}
+
+
+ball\-Down verifies that the case beneath the ball is valid and the ball can step in 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball\-P} & pointer on \hyperlink{struct_ball}{Ball} \\
+\hline
+{\em field\-P} & pointer on \hyperlink{struct_field}{Field} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+28 \{
+29     \textcolor{keywordflow}{if} (\hyperlink{_field_8c_aff9c5d930d2c1454175719830b4783a0}{fieldPosValid}( fieldP, ballP->\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}, ballP->\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}+1))
+30         ballP->\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}++;
+31 \}
+\end{DoxyCode}
+\hypertarget{_ball_8c_adeb84f89e19e1880e73fc68689cba901}{\index{Ball.\-c@{Ball.\-c}!ball\-Get\-X@{ball\-Get\-X}}
+\index{ball\-Get\-X@{ball\-Get\-X}!Ball.c@{Ball.\-c}}
+\subsubsection[{ball\-Get\-X}]{\setlength{\rightskip}{0pt plus 5cm}int ball\-Get\-X (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ball} $\ast$}]{ball\-P}
+\end{DoxyParamCaption}
+)}}\label{_ball_8c_adeb84f89e19e1880e73fc68689cba901}
+
+
+This function returns the ball's position on the abscissa axe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball\-P} & pointer on \hyperlink{struct_ball}{Ball} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ball\-P-\/$>$x 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+33 \{
+34     \textcolor{keywordflow}{return} ballP->\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x};
+35 \}
+\end{DoxyCode}
+\hypertarget{_ball_8c_a6c78f5c3a37642246c899f8b09afbf0a}{\index{Ball.\-c@{Ball.\-c}!ball\-Get\-Y@{ball\-Get\-Y}}
+\index{ball\-Get\-Y@{ball\-Get\-Y}!Ball.c@{Ball.\-c}}
+\subsubsection[{ball\-Get\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int ball\-Get\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ball} $\ast$}]{ball\-P}
+\end{DoxyParamCaption}
+)}}\label{_ball_8c_a6c78f5c3a37642246c899f8b09afbf0a}
+
+
+This function returns the ball's position on the ordinate axe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball\-P} & pointer on \hyperlink{struct_ball}{Ball} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ball\-P-\/$>$y 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+38 \{
+39     \textcolor{keywordflow}{return} ballP->\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y};
+40 \}
+\end{DoxyCode}
+\hypertarget{_ball_8c_ad65cd332c7015a87103e23a874c43d66}{\index{Ball.\-c@{Ball.\-c}!ball\-Init@{ball\-Init}}
+\index{ball\-Init@{ball\-Init}!Ball.c@{Ball.\-c}}
+\subsubsection[{ball\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void ball\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf Ball} $\ast$}]{ball\-P}
+\end{DoxyParamCaption}
+)}}\label{_ball_8c_ad65cd332c7015a87103e23a874c43d66}
+
+
+This procedure will initialize the ball at the beginning of the map level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball\-P} & pointer on structure \hyperlink{struct_ball}{Ball} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+4 \{
+5     ballP->\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x} = 1;
+6     ballP->\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y} = 17;
+7 \}
+\end{DoxyCode}
+\hypertarget{_ball_8c_aace25da6736b76c54080682ef5545b6c}{\index{Ball.\-c@{Ball.\-c}!ball\-Left@{ball\-Left}}
+\index{ball\-Left@{ball\-Left}!Ball.c@{Ball.\-c}}
+\subsubsection[{ball\-Left}]{\setlength{\rightskip}{0pt plus 5cm}void ball\-Left (
+\begin{DoxyParamCaption}
+\item[{{\bf Ball} $\ast$}]{ball\-P, }
+\item[{const {\bf Field} $\ast$}]{field\-P}
+\end{DoxyParamCaption}
+)}}\label{_ball_8c_aace25da6736b76c54080682ef5545b6c}
+
+
+ball\-Left verifies that the case on the left of the ball is valid and the ball can step in 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball\-P} & pointer on \hyperlink{struct_ball}{Ball} \\
+\hline
+{\em field\-P} & pointer on \hyperlink{struct_field}{Field} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+9 \{
+10     \textcolor{keywordflow}{if} (\hyperlink{_field_8c_aff9c5d930d2c1454175719830b4783a0}{fieldPosValid}( fieldP, ballP->\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}-1, ballP->\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}))
+11         ballP->\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}--;
+12 \}
+\end{DoxyCode}
+\hypertarget{_ball_8c_ad1fd06b817cfc82d212f68c978cf42ee}{\index{Ball.\-c@{Ball.\-c}!ball\-Right@{ball\-Right}}
+\index{ball\-Right@{ball\-Right}!Ball.c@{Ball.\-c}}
+\subsubsection[{ball\-Right}]{\setlength{\rightskip}{0pt plus 5cm}void ball\-Right (
+\begin{DoxyParamCaption}
+\item[{{\bf Ball} $\ast$}]{ball\-P, }
+\item[{const {\bf Field} $\ast$}]{field\-P}
+\end{DoxyParamCaption}
+)}}\label{_ball_8c_ad1fd06b817cfc82d212f68c978cf42ee}
+
+
+ball\-Right verifies that the case on the right of the ball is valid and the ball can step in 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball\-P} & pointer on \hyperlink{struct_ball}{Ball} \\
+\hline
+{\em field\-P} & pointer on \hyperlink{struct_field}{Field} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+15 \{
+16     \textcolor{keywordflow}{if} (\hyperlink{_field_8c_aff9c5d930d2c1454175719830b4783a0}{fieldPosValid}( fieldP, ballP->\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}+1, ballP->\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}))
+17         ballP->\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}++;
+18 \}
+\end{DoxyCode}
+\hypertarget{_ball_8c_ad272a2bac319d1128c214f8e8c801ff1}{\index{Ball.\-c@{Ball.\-c}!ball\-Up@{ball\-Up}}
+\index{ball\-Up@{ball\-Up}!Ball.c@{Ball.\-c}}
+\subsubsection[{ball\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void ball\-Up (
+\begin{DoxyParamCaption}
+\item[{{\bf Ball} $\ast$}]{ball\-P, }
+\item[{const {\bf Field} $\ast$}]{field\-P}
+\end{DoxyParamCaption}
+)}}\label{_ball_8c_ad272a2bac319d1128c214f8e8c801ff1}
+
+
+ball\-Up verifies that the case above the ball is valid and the ball can step in 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball\-P} & pointer on \hyperlink{struct_ball}{Ball} \\
+\hline
+{\em field\-P} & pointer on \hyperlink{struct_field}{Field} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+22 \{
+23     \textcolor{keywordflow}{if} (\hyperlink{_field_8c_aff9c5d930d2c1454175719830b4783a0}{fieldPosValid}( fieldP, ballP->\hyperlink{struct_ball_a6150e0515f7202e2fb518f7206ed97dc}{x}, ballP->\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}-1))
+24         ballP->\hyperlink{struct_ball_a0a2f84ed7838f07779ae24c5a9086d33}{y}--;
+25 \}
+\end{DoxyCode}

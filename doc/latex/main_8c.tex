@@ -1,0 +1,46 @@
+\hypertarget{main_8c}{\section{src/main.c File Reference}
+\label{main_8c}\index{src/main.\-c@{src/main.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}sdl\-Game.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ncurs\-Game.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}menu.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$S\-D\-L/\-S\-D\-L.\-h$>$}\\*
+{\ttfamily \#include $<$S\-D\-L/\-S\-D\-L\-\_\-mixer.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{main.\-c@{main.\-c}!main@{main}}
+\index{main@{main}!main.c@{main.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+\begin{DoxyCode}
+55 \{
+56 
+57     \textcolor{comment}{/*This part is refered to the text mode}
+58 \textcolor{comment}{     Menu m;}
+59 \textcolor{comment}{    menuInit(&m);}
+60 \textcolor{comment}{    menuAjouterLigne(&m, "Play level 1", GameLvl1);}
+61 \textcolor{comment}{    menuAjouterLigne(&m, "Play level 2", GameLvl2);}
+62 \textcolor{comment}{    menuAjouterLigne(&m, "Play level 3", GameLvl3);}
+63 \textcolor{comment}{    menuAjouterLigne(&m, "Quit Game", Quit);}
+64 \textcolor{comment}{    menuLoop(&m);}
+65 \textcolor{comment}{    menuLibere(&m);*/}
+66 
+67     \hyperlink{structsdl_game}{sdlGame} game;
+68     \hyperlink{sdl_game_8c_ad1d9908b6b134998092307ac2e452897}{sdlGameLoopMenu}( &game );
+69     \hyperlink{sdl_game_8c_a7680882d60949a9cb3c341a2b88730a0}{sdlGameFree}( &game );
+70     \textcolor{keywordflow}{return} 0;
+71 
+72 \}
+\end{DoxyCode}

@@ -1,0 +1,83 @@
+\hypertarget{ncurs_game_8h}{\section{src/ncurs\-Game.h File Reference}
+\label{ncurs_game_8h}\index{src/ncurs\-Game.\-h@{src/ncurs\-Game.\-h}}
+}
+{\ttfamily \#include $<$ncurses.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Game.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ncurs_game_8h_acc97a2ab3f9344b9a5119ad9f8b9dcaa}{ncurs\-Boucle} (\hyperlink{struct_game}{Game} $\ast$)
+\begin{DoxyCompactList}\small\item\em The loop procedure used for the text mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ncurs_game_8h_acc97a2ab3f9344b9a5119ad9f8b9dcaa}{\index{ncurs\-Game.\-h@{ncurs\-Game.\-h}!ncurs\-Boucle@{ncurs\-Boucle}}
+\index{ncurs\-Boucle@{ncurs\-Boucle}!ncursGame.h@{ncurs\-Game.\-h}}
+\subsubsection[{ncurs\-Boucle}]{\setlength{\rightskip}{0pt plus 5cm}void ncurs\-Boucle (
+\begin{DoxyParamCaption}
+\item[{{\bf Game} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{ncurs_game_8h_acc97a2ab3f9344b9a5119ad9f8b9dcaa}
+
+
+The loop procedure used for the text mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{struct_game}{Game}} & pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+31 \{
+32     WINDOW *win;
+33     \textcolor{keywordtype}{int} c;
+34     \textcolor{keywordtype}{int} continue\_boucle;
+35 
+36     initscr();
+37     clear();
+38     noecho();
+39     cbreak();
+40 
+41     win = newwin( \hyperlink{_field_8c_af7e542de6daa95a149ced308e0565f3e}{fieldGetDimY}(\hyperlink{_game_8c_a13958611a02852e3d9d6bba8cf188aea}{gameGetConstField}(gameP)), 
+      \hyperlink{_field_8c_afbca9de3aefdda43886ea10eca0caf4e}{fieldGetDimX}(\hyperlink{_game_8c_a13958611a02852e3d9d6bba8cf188aea}{gameGetConstField}(gameP)), 10, 5 );
+42     keypad(win, TRUE);
+43     nodelay(win,\textcolor{keyword}{true});
+44 
+45     continue\_boucle = 1;
+46 
+47     \hyperlink{ncurs_game_8c_af848b2269120c325af7c1315390c6874}{ncursAff}( win, gameP);
+48 
+49     \textcolor{keywordflow}{do}
+50     \{
+51         c = wgetch(win);
+52 
+53         \textcolor{keywordflow}{switch}(c)
+54         \{
+55             \textcolor{keywordflow}{case} KEY\_LEFT:
+56                 \hyperlink{_game_8c_af230893bf1f5f7b67be0c569647ab3b0}{gameKeyboard}( gameP, \textcolor{charliteral}{'g'});
+57                 \hyperlink{ncurs_game_8c_af848b2269120c325af7c1315390c6874}{ncursAff}( win, gameP);
+58                 \textcolor{keywordflow}{break};
+59             \textcolor{keywordflow}{case} KEY\_RIGHT:
+60                 \hyperlink{_game_8c_af230893bf1f5f7b67be0c569647ab3b0}{gameKeyboard}( gameP, \textcolor{charliteral}{'d'});
+61                 \hyperlink{ncurs_game_8c_af848b2269120c325af7c1315390c6874}{ncursAff}( win, gameP);
+62                 \textcolor{keywordflow}{break};
+63             \textcolor{keywordflow}{case} KEY\_UP:
+64                 \hyperlink{_game_8c_af230893bf1f5f7b67be0c569647ab3b0}{gameKeyboard}( gameP, \textcolor{charliteral}{'h'});
+65                 \hyperlink{ncurs_game_8c_af848b2269120c325af7c1315390c6874}{ncursAff}( win, gameP);
+66                 \textcolor{keywordflow}{break};
+67             \textcolor{keywordflow}{case} KEY\_DOWN:
+68                 \hyperlink{_game_8c_af230893bf1f5f7b67be0c569647ab3b0}{gameKeyboard}( gameP, \textcolor{charliteral}{'b'});
+69                 \hyperlink{ncurs_game_8c_af848b2269120c325af7c1315390c6874}{ncursAff}( win, gameP);
+70                 \textcolor{keywordflow}{break};
+71             \textcolor{keywordflow}{case} 27:
+72                 continue\_boucle = 0;
+73                 \textcolor{keywordflow}{break};
+74         \}
+75     \} \textcolor{keywordflow}{while} (continue\_boucle==1);
+76 
+77 
+78 
+79     endwin();
+80 \}
+\end{DoxyCode}
